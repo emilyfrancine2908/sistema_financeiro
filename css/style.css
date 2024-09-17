@@ -1,0 +1,29 @@
+form{
+    margin-top: 20%;
+    text-align:left;
+ }
+
+.fa-solid{
+    font-size: 100px;
+    color: aliceblue;
+}
+
+body{
+    background-color: rgb(180, 154, 233);
+}
+
+.form-label{
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.btn{
+    width: 40%;
+}
+.button{
+    text-align: center;
+}
+
+.img {
+    margin-top: 150px;
+}
