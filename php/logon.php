@@ -20,7 +20,7 @@ $email_banco = $resultado['email'];
 $senha_banco = $resultado['senha'];
 
 
-in($email == $email_banco && $password == $senha_banco) {
+if($email == $email_banco && $password == $senha_banco) {
     header('location: tela_inicial.html');
 }else {
     echo "<script> alert('Usuario ou senha Invalida'); history.back(); </script>";

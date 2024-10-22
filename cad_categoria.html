@@ -18,7 +18,7 @@
             <img class="img" src="img/img.svg" alt="" srcset="">
           </div>
           <div class="col-sm-12 col-md-4">
-            <form>
+            <form action="php/insert_categoria.php" method="post">
               <h1 id="h1_cad_user"> CATEGORIA</h1>
 
                 <div class="mb-3">
@@ -28,12 +28,11 @@
 
                 <h4 style="color: white; text-align: center;">TIPO</h4>
             <div class="mb-3">
-              <input type="checkbox" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
+              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
               <label for="tipo" class="form-label">Tipo 1</label>
             </div>
-
             <div class="mb-3">
-              <input type="checkbox" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
+              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
               <label for="tipo" class="form-label">Tipo 2</label>
             </div>
 
@@ -44,7 +43,7 @@
 
             <div class="button">
                 <a href="cad_usuario.html" type="submit" class="btn btn-secondary">Voltar</a>
-                <a href="cad_lancamento.html" type="submit" class="btn btn-success">Próximo</a> 
+                <button type="submit" class="btn btn-success">Entrar</a> 
             </div>
 
               </form>
