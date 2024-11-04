@@ -10,6 +10,18 @@
 </head>
 <body>
 
+<div style="">
+    <?php
+            session_start();
+            if (isset($_SESSION['id'])) {
+              $id = $_SESSION['id'];
+              echo "Olá $id";
+               } else{
+                echo "<script>alert('Usuário precisar logar'); history.back();</script>";
+               }
+    ?>
+</div>
+
 <div class="container text-center text-light" style="margin-top: 10%;">
     <h1>Seja bem vindo ao sistema de lançamentos</h1>
        <p>Escolha uma opção para lançar</p>

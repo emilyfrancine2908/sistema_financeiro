@@ -1,11 +1,12 @@
 <?php
+//link da conexão
+include 'conexao.php';
+
 //recebendo os dados da tela de login
 
 $email = $_POST['email'];
-$password = $_POST['senha'];
+$password = $_POST['password'];
 
-//link da conexão
-include 'conexao.php';
 
 //pagar os dados do banco
 
@@ -21,7 +22,9 @@ $senha_banco = $resultado['senha'];
 
 
 if($email == $email_banco && $password == $senha_banco) {
-    header('location: tela_inicial.html');
+    session_start();
+    $_SESSION['id'] =  $resultado['id_usuario'];
+    header('location: ../tela_inicial.php');
 }else {
     echo "<script> alert('Usuario ou senha Invalida'); history.back(); </script>";
 }
