@@ -9,25 +9,25 @@
     <script src="https://kit.fontawesome.com/c0f408d1cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div style="">
+<div class="container text-center text-light" style="margin-top: 10%;">
+    <h1>
     <?php
+            include 'php/conexao.php';
             session_start();
             if (isset($_SESSION['id'])) {
-              $id = $_SESSION['id'];
-              echo "Olá $id";
-               } else{
-                echo "<script>alert('Usuário precisar logar'); history.back();</script>";
-               }
-    ?>
-</div>
-
-<div class="container text-center text-light" style="margin-top: 10%;">
-    <h1>Seja bem vindo ao sistema de lançamentos</h1>
+                $id = $_SESSION['id'];
+                $sql = "SELECT * FROM tb_user WHERE id_usuario = $id";
+                $query = $conexao->query($sql);
+                $resultado = $query->fetch_assoc();
+                echo $resultado['nome']."!";
+            }else {
+                echo "<script> alert('Você não está logado!'); history.back(); </script>"; 
+            }
+    ?> Seja bem vindo ao sistema de lançamentos</h1>
        <p>Escolha uma opção para lançar</p>
 
     <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 50px;">
-        <a href="cad_categoria.html" type="button" class="btn btn-success">Cadastrar Categoria</a>
+        <a href="cad_categoria.php" type="button" class="btn btn-success">Cadastrar Categoria</a>
         <button type="button" class="btn btn-primary">Realizar um lançamento</button>
     </div>
     

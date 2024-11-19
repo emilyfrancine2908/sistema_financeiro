@@ -13,6 +13,23 @@
 
 <body>
     <div class="container text-center">
+      <div style="color: white">
+        <?php
+        include 'php/conexao.php';
+        session_start();
+        if (isset($_SESSION['id'])) {
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM tb_user WHERE id_usuario = $id";
+            $query = $conexao->query($sql);
+            $resultado = $query->fetch_assoc();
+            echo "Olá", $resultado['nome']."!";
+        }else {
+            echo "<script> alert('Você não está logado!'); history.back(); </script>"; 
+        }
+        ?>
+        <a class="btn btn-primary" href="php/logout.php" role="button">Sair</a>
+
+      </div>
         <div class="row">
           <div class="col-sm-12 col-md-4">
             <img class="img" src="img/img.svg" alt="" srcset="">
@@ -22,17 +39,17 @@
               <h1 id="h1_cad_user"> CATEGORIA</h1>
 
                 <div class="mb-3">
-                  <label for="nome" class="form-label left">Data</label>
-                  <input type="date" class="form-control" id="Data" name="Data" aria-describedby="emailHelp">
+                  <label for="nome" class="form-label left">Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp">
                 </div>
 
                 <h4 style="color: white; text-align: center;">TIPO</h4>
             <div class="mb-3">
-              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
+              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp" value="0">
               <label for="tipo" class="form-label">Tipo 1</label>
             </div>
             <div class="mb-3">
-              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp">
+              <input type="radio" class="type" id="tipo" name="tipo" aria-describedby="emailHelp" value="1">
               <label for="tipo" class="form-label">Tipo 2</label>
             </div>
 
